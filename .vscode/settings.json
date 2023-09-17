@@ -1,0 +1,5 @@
+{
+    "python.pipenvPath": "C:/ProgramData/Anaconda3/Scripts/activate & conda activate ml_env",
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "C:/Users/yawlc.000/.conda/envs/ml_env/python.exe"
+}
