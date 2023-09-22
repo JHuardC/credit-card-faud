@@ -1,2 +1,4 @@
 data/*
 !source_data.txt
+
+notebooks/.ipynb_checkpoints
