@@ -1,4 +1,6 @@
 data/*
 !source_data.txt
+!train-test-pack/*.dvc
+!eda-pack/*.dvc
 
 notebooks/.ipynb_checkpoints
