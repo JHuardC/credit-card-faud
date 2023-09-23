@@ -13,3 +13,5 @@ data/eda-pack/*.*
 notebooks/.ipynb_checkpoints
 
 **/*.egg-info
+
+**/__pycache__
