@@ -11,3 +11,5 @@ data/eda-pack/*.*
 !*.dvc
 
 notebooks/.ipynb_checkpoints
+
+**/*.egg-info
