@@ -136,7 +136,8 @@ def pyplot_raincloud(
     customization.
     """
     if isinstance(group_by, type(None)):
-        plot_data = df[col]
+        plot_data = [df[col].tolist()]
+        label_names = [col]
     else:
         # extract groups according to group order
         if isinstance(group_order, type(None)):
@@ -316,10 +317,3 @@ def pyplot_raincloud(
         )
 
     return {'box': bp, 'cloud': vp, 'scats': sc}
-
-
-########################################################################
-########################################################################
-
-if __name__ == '__main__':
-    ### Provide Example use case
