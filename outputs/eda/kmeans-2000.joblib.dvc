@@ -1,0 +1,5 @@
+outs:
+- md5: f6ee3bccc274392bbaf696e395a441a5
+  size: 1391139
+  hash: md5
+  path: kmeans-2000.joblib
