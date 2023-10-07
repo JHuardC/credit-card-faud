@@ -1,0 +1,5 @@
+outs:
+- md5: fea292d59575f83bbc184da4e10ab45c
+  size: 54682928
+  hash: md5
+  path: X_train.npm

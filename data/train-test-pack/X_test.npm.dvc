@@ -1,0 +1,5 @@
+outs:
+- md5: 28ca04faa9808611542cf1fa0dd80ee3
+  size: 13671008
+  hash: md5
+  path: X_test.npm
