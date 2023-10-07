@@ -50,8 +50,14 @@ if __name__ == '__main__':
     # Saving outputs
     joblib.dump(le, TRAIN_TEST_PATH.joinpath('lbl-enc.joblib'))
 
+    with open(TRAIN_TEST_PATH.joinpath('X_train.npm'), 'wb') as f:
+        numpy_save(f, X_train)
+
     with open(TRAIN_TEST_PATH.joinpath('y_train.npm'), 'wb') as f:
         numpy_save(f, y_train)
+
+    with open(TRAIN_TEST_PATH.joinpath('X_test.npm'), 'wb') as f:
+        numpy_save(f, X_test)
 
     with open(TRAIN_TEST_PATH.joinpath('y_test.npm'), 'wb') as f:
         numpy_save(f, y_test)
