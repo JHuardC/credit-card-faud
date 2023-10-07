@@ -1,0 +1,5 @@
+outs:
+- md5: 4c3eb5896cf3875b55074a1809ed1856
+  size: 153519186
+  hash: md5
+  path: local-outlier-factor.joblib
