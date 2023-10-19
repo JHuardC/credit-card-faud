@@ -1,1 +1,1 @@
-from credit_fraud.raincloud._raincloud import pyplot_raincloud
+from credit_fraud.raincloud._raincloud import pyplot_raincloud, pyplot_cloud
