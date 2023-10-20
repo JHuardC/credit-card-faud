@@ -257,7 +257,11 @@ def pyplot_cloud(
     if isinstance(cloud_kwargs, type(None)):
         vp = ax.violinplot(
             dataset = plot_data,
-            vert = vert
+            vert = vert,
+            showmeans = False,
+            showmedians = False,
+            showextrema = False,
+            widths = 1.2
         )
 
     elif isinstance(cloud_kwargs, dict):
@@ -281,6 +285,20 @@ def pyplot_cloud(
         raise ValueError(
             f'cloud_kwargs arg not recognised as valid: {cloud_kwargs}'
         )
+    
+    for idx, scale, body in zip(count(), scalars, vp['bodies']):
+
+        # Modify body to show only the upper half of the violin plot
+        width_vals = body.get_paths()[0].vertices[:, 1]
+
+        width_vals = scale * where(
+            width_vals <= idx + 1,
+            0,
+            width_vals - idx - 1
+        )
+
+        # Update body
+        body.get_paths()[0].vertices[:, 1] = width_vals + idx + 1
 
     return {'box': bp, 'cloud': vp}
 
