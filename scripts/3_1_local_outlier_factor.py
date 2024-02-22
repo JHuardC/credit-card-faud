@@ -12,14 +12,15 @@ import joblib
 ### Constants
 PROJECT_PATH = pl.Path(dotenv.find_dotenv()).absolute().parent
 
-X_train = pd.read_parquet(
-    PROJECT_PATH.joinpath('data', 'train-test-pack', 'X_train.pqt')
+df_eda = pd.read_parquet(
+    PROJECT_PATH.joinpath('data', 'eda-pack', 'df_eda.pqt')
 )
+df_eda = df_eda.loc[:, [el for el in df_eda.columns if el != 'Class']]
 
 standardizer = StandardScaler()
-X_train = pd.DataFrame(
-    standardizer.fit_transform(X_train),
-    columns = X_train.columns
+df_eda = pd.DataFrame(
+    standardizer.fit_transform(df_eda),
+    columns = df_eda.columns
 )
 
 outlier_factor = LocalOutlierFactor(
@@ -27,7 +28,7 @@ outlier_factor = LocalOutlierFactor(
     algorithm = 'ball_tree',
     n_jobs = -1
 )
-outlier_factor.fit(X_train)
+outlier_factor.fit(df_eda)
 
 joblib.dump(
     outlier_factor,
