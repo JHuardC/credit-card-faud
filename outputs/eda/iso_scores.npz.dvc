@@ -1,0 +1,5 @@
+outs:
+- md5: b5e0298fcbac16a78101785215cc0764
+  size: 1822888
+  hash: md5
+  path: iso_scores.npz

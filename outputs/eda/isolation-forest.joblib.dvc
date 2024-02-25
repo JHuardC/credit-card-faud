@@ -1,0 +1,5 @@
+outs:
+- md5: a06ff15444363e2c8d66ec49d3750972
+  size: 8694717
+  hash: md5
+  path: isolation-forest.joblib
