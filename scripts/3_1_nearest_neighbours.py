@@ -1,5 +1,6 @@
 """
-Create local outlier factor feature
+Create KNeighboursTransformer for use in outlier detection feature
+creation techniques.
 """
 ### Imports
 import pathlib as pl
