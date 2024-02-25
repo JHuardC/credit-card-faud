@@ -1,0 +1,5 @@
+outs:
+- md5: 55439917a4f9d1048597304cee8e48d2
+  size: 113418205
+  hash: md5
+  path: 30NeighboursTransformer.joblib

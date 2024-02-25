@@ -1,0 +1,5 @@
+outs:
+- md5: 56bc33de77724f5ed73914d53ff5abe7
+  size: 73270352
+  hash: md5
+  path: distance_network_30.npz
