@@ -6,8 +6,9 @@ import pathlib as pl
 import dotenv
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import LocalOutlierFactor
+from sklearn.neighbors import KNeighborsTransformer
 import joblib
+from scipy.sparse import save_npz
 
 ### Constants
 PROJECT_PATH = pl.Path(dotenv.find_dotenv()).absolute().parent
@@ -23,14 +24,22 @@ df_eda = pd.DataFrame(
     columns = df_eda.columns
 )
 
-outlier_factor = LocalOutlierFactor(
-    n_neighbors = 20,
+nearest_neighbours = KNeighborsTransformer(
+    mode = 'distance',
+    n_neighbors = 30,
     algorithm = 'ball_tree',
     n_jobs = -1
 )
-outlier_factor.fit(df_eda)
+distance_network = nearest_neighbours.fit_transform(df_eda)
 
+### save distance_network
+save_npz(
+    PROJECT_PATH.joinpath('outputs/eda/distance_network_30.npz'),
+    distance_network
+)
+
+### save fitted transformer
 joblib.dump(
-    outlier_factor,
-    PROJECT_PATH.joinpath('outputs', 'eda', 'local-outlier-factor.joblib')
+    nearest_neighbours,
+    PROJECT_PATH.joinpath('outputs/eda/30NeighboursTransformer.joblib')
 )
